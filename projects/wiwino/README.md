@@ -45,10 +45,20 @@ Below is the database diagram. The `yellow keys` symbol represents `PRIMARY KEYS
 
 Crunch the numbers to arrive at a complete market analysis.
 
-We would like to create a country leaderboard. Come up with a visual that shows the average wine rating for each country. Do the same for the vintages
+You should at least answers these questions from the perspective of Wiwino:
+- We want to highlight 10 wines to increase our sales. Which ones should we choose and why?
+- We have a limited marketing budget for this year. Which country should we prioritise and why?
+- We would like to give awards to the best wineries. Come up with 3 relevant ones. Which wineries should we choose and why?
+- We detected that a big cluster of customers likes a specific combination of tastes. We identified a few keywords that match these tastes: _coffee_, _toast_, _green apple_, _cream_, and _citrus_ (note that these keywords are case sensitive ⚠️). We would like you to find all the wines that are related to these keywords. Check that **at least 10 users confirm those keywords**, to ensure the accuracy of the selection. Additionally, identify an appropriate group name for this cluster.
+- We would like to select wines that are easy to find all over the world. **Find the top 3 most common `grape`s all over the world** and **for each grape, give us the the 5 best rated wines**.
+
+•	We would like to create a country leaderboard. Come up with a visual that shows the average wine rating for each country. Do the same for the vintages.
+•	One of our VIP clients likes Cabernet Sauvignon and would like our top 5 recommendations. Which wines would you recommend to him?
+
 
 Give us any other useful insights you found in the data. **Be creative!** 😉
 
+- One of our VIP clients likes _Cabernet Sauvignon_ and would like our top 5 recommendations. Which wines would you recommend to him?
 If a certain question is hard or not possible to answer with the data you have been given, document what is missing. This can always happen...
 
 **Known issues**
@@ -68,18 +78,27 @@ If a certain question is hard or not possible to answer with the data you have b
 
 ## Constraints
 
-- You are not allowed to use pandas or similar tools for the data analysis, you should use SQL and SQL only
-    - For instance, use SQL `JOIN`s to cross-reference tables, not `pd.merge()`
-    - But you can of course use a Python ORM library if you like
-- Write your queries in dedicated `.sql` files or a `queries.py` file with the queries as strings
+- The team has to work in a Data Analyst (Clients) - Data Engineer (Providers) tandem
+- Create a Trello board with 4 sections:
+    - Backlog (where Data Analysts request CSV files)
+    - In Progress (where Data Engineers put the tickets when they are working on them)
+    - Ready for Testing (where Data Engineers put the tickets when they are done, waiting for Data Analyst feedback)
+    - Done (where Data Analysts put the tickets when the Data Engineer has done his job properly)
+- The Github repo has to follow the trello board:
+    - In Progress: the script and the generated CSV are in a new branch created by the engineer
+    - Ready for Testing: the analyst checks if the CSV answers his request.
+        - Yes: Move to done and merge the branch with the main branch
+        - No: Back to in progress
+    - Done: The branch has been merged
 - For visualizing your insights, use either Python or Excel
 
 ## Deliverables
 
 1. Publish your source code in a GitHub repository
-2. Pimp the README file
+2. Share the link to your trello board
+3. Pimp the README file
     - Include the main insights in it
-3. Show us your results in a nice presentation
+4. Show us your results in a nice presentation (add it in PDF format to the github)
     - Can be with PowerPoint, a smooth Jupyter notebook & Markdown, a printout, ...
 
 ## Steps
